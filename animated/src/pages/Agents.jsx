@@ -31,8 +31,13 @@ const agents = () => {
         trigger: imageDivRef.current,
         start: "top 34%",
         end: "top -90%",
-        scrub: true,
+        scrub: 1,
         pin: true,
+        pinSpacing: true,
+        pinReparent: true,
+        pinType: "transform",
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
         onUpdate: function (elem) {
           let imageIndex;
           if (elem.progress < 1) {
@@ -48,7 +53,7 @@ const agents = () => {
 
   return (
     <div>
-      <div className="section1">
+      <div className="section1 py-1 ">
         <div
           ref={imageDivRef}
           className=" h-[60vw] md:h-[20vw]  overflow-hidden rounded-3xl md:w-[15vw] absolute top-10 md:top-80 left-[30vw]  "

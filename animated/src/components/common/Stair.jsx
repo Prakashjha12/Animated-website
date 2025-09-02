@@ -12,7 +12,6 @@ const Stair = (props) => {
   useGSAP(
     function () {
       const tl = gsap.timeline();
-
       tl.to(stairParentRef.current, {
         display: "block",
       });
@@ -20,13 +19,13 @@ const Stair = (props) => {
       tl.from(".stair", {
         height: 0,
         stagger: {
-          amount: -0.25,
+          amount: -0.2,
         },
       });
       tl.to(".stair", {
         y: "100%",
         stagger: {
-          amount: -0.3,
+          amount: -0.25,
         },
       });
       tl.to(stairParentRef.current, {
@@ -37,7 +36,8 @@ const Stair = (props) => {
       });
       gsap.from(pageref.current, {
         opacity: 0,
-        delay: 1.2,
+        delay: 1.3,
+        scale: 1.2,
       });
     },
     [currentPath]
